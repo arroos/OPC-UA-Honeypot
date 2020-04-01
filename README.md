@@ -16,3 +16,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with the OPC UA Honeypot..  If not, see 
 <https://www.gnu.org/licenses/>.
+
+Some individual files are Copyright The OPC Foundation, Inc and licensed 
+under either the OPC Reciprocal Community License or the OPC Foundation 
+MIT License, as specified by the copyright notices in these files. 
