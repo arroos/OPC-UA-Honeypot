@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<opc:ModelDesign xmlns:opc="http://opcfoundation.org/UA/ModelDesign.xsd" DefaultLocale="en" TargetNamespace="http://opcfoundation.org/UA/TCD/" xmlns="http://opcfoundation.org/UA/TCD/" xmlns:ua="http://opcfoundation.org/UA/" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://opcfoundation.org/UA/ModelDesign.xsd opc_with_namespace.xsd">
+  <opc:Namespaces>
+    <opc:Namespace InternalPrefix="Opc.Ua.Server" Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
+    <opc:Namespace Name="TCD" Prefix="TCD" XmlPrefix="TCD">http://opcfoundation.org/UA/TCD/</opc:Namespace>
+  </opc:Namespaces>
+  <opc:VariableType BaseType="ua:BaseDataVariableType" DataType="ActiveErrorDataType" ExposesItsChildren="false" IsAbstract="false" IsDeclaration="false" NoClassGeneration="false" PartNo="0" SymbolicName="ActiveErrorsDataType" ValueRank="Array" WriteAccess="0">
+    <opc:Children/>
+  </opc:VariableType>
+  <opc:DataType BaseType="ua:Structure" IsAbstract="false" IsDeclaration="false" NoArraysAllowed="false" NoClassGeneration="false" NotInAddressSpace="false" PartNo="0" SymbolicName="TimeZoneDataType" WriteAccess="0">
+    <opc:Fields>
+      <opc:Field ArrayDimensions="" DataType="ua:UInt16" Name="offset" ValueRank="Scalar">
+        <opc:Description Key="">Offset from UTC in minutes</opc:Description>
+      </opc:Field>
+      <opc:Field ArrayDimensions="" DataType="ua:Boolean" Name="daylightSavingInOffset" ValueRank="Scalar">
+        <opc:Description Key="">Daylight savings is included in the offset</opc:Description>
+      </opc:Field>
+    </opc:Fields>
+  </opc:DataType>
+  <opc:DataType BaseType="ua:Structure" IsAbstract="false" IsDeclaration="false" NoArraysAllowed="false" NoClassGeneration="false" NotInAddressSpace="false" PartNo="0" SymbolicName="ActiveErrorDataType" WriteAccess="0">
+    <opc:Fields>
+      <opc:Field ArrayDimensions="" DataType="ua:String" Name="Id" ValueRank="Scalar">
+        <opc:Description Key=""/>
+      </opc:Field>
+      <opc:Field ArrayDimensions="" DataType="ua:UInt16" Name="Severity" ValueRank="Scalar">
+        <opc:Description Key=""/>
+      </opc:Field>
+      <opc:Field ArrayDimensions="" DataType="ua:LocalizedText" Name="Message" ValueRank="Scalar">
+        <opc:Description Key=""/>
+      </opc:Field>
+    </opc:Fields>
+  </opc:DataType>
+  <opc:ObjectType BaseType="ua:BaseObjectType" IsAbstract="false" IsDeclaration="false" NoClassGeneration="false" PartNo="0" SymbolicName="IdentificationType" WriteAccess="0">
+    <opc:Children>
+      <opc:Property DataType="ua:String" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="SerialNumber" WriteAccess="0"/>
+      <opc:Property DataType="ua:String" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="Model" WriteAccess="0"/>
+      <opc:Property DataType="ua:String" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="Manufacturer" WriteAccess="0"/>
+      <opc:Property DataType="ua:String" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="DeviceClass" WriteAccess="0"/>
+    </opc:Children>
+  </opc:ObjectType>
+  <opc:ObjectType BaseType="ua:BaseObjectType" IsAbstract="false" IsDeclaration="false" NoClassGeneration="false" PartNo="0" SymbolicName="TCDSpecificationType" WriteAccess="0">
+    <opc:Children>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="CoolingCapacity" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="ConnectedLoad" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="NominalFlowRate" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="PowerValue" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="MaxTemperature" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="MinTemperature" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+    </opc:Children>
+  </opc:ObjectType>
+  <opc:ObjectType BaseType="ua:BaseObjectType" IsAbstract="false" IsDeclaration="false" NoClassGeneration="false" PartNo="0" SymbolicName="OperationType" WriteAccess="0">
+    <opc:Children>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="ActiveErrors" TypeDefinition="ActiveErrorsDataType" WriteAccess="0"/>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="HoursOfOperation" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Property DataType="ua:UInt16" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="HighestActiveAlarmSeverity" WriteAccess="0"/>
+      <opc:Property DataType="ua:UInt32" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="DeviceMappingNumber" WriteAccess="0"/>
+      <opc:Property DataType="ua:String" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="OperatingMode" WriteAccess="0"/>
+      <opc:Method IsDeclaration="false" MaxCardinality="0" MinCardinality="0" NonExecutable="false" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="ResetAllErrors" WriteAccess="0">
+        <opc:InputArguments/>
+        <opc:OutputArguments/>
+      </opc:Method>
+      <opc:Method IsDeclaration="false" MaxCardinality="0" MinCardinality="0" NonExecutable="false" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="SwitchOn" WriteAccess="0">
+        <opc:InputArguments/>
+        <opc:OutputArguments/>
+      </opc:Method>
+      <opc:Method IsDeclaration="false" MaxCardinality="0" MinCardinality="0" NonExecutable="false" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="SwitchOff" WriteAccess="0">
+        <opc:InputArguments/>
+        <opc:OutputArguments/>
+      </opc:Method>
+    </opc:Children>
+  </opc:ObjectType>
+  <opc:ObjectType BaseType="ua:BaseObjectType" IsAbstract="false" IsDeclaration="false" NoClassGeneration="false" PartNo="0" SymbolicName="TCD_Interface" WriteAccess="0">
+    <opc:Children>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="DeviceZone" TypeDefinition="DeviceZoneType" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="MachineConfiguration" TypeDefinition="MachineConfigurationType" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="Operation" TypeDefinition="OperationType" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="TCDSpecification" TypeDefinition="TCDSpecificationType" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="Identification" TypeDefinition="IdentificationType" WriteAccess="0"/>
+    </opc:Children>
+  </opc:ObjectType>
+  <opc:ObjectType BaseType="ua:BaseObjectType" IsAbstract="false" IsDeclaration="false" NoClassGeneration="false" PartNo="0" SymbolicName="MachineConfigurationType" WriteAccess="0">
+    <opc:Children>
+      <opc:Property DataType="TimeZoneDataType" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="TimeZoneOffset" WriteAccess="0"/>
+      <opc:Property AccessLevel="ReadWrite" DataType="ua:String" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="LocationName" WriteAccess="0"/>
+      <opc:Property AccessLevel="ReadWrite" DataType="ua:String" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="UserMachineName" WriteAccess="0"/>
+    </opc:Children>
+  </opc:ObjectType>
+  <opc:ObjectType BaseType="ua:BaseObjectType" IsAbstract="false" IsDeclaration="false" NoClassGeneration="false" PartNo="0" SymbolicName="DeviceZoneType" WriteAccess="0">
+    <opc:Children>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="MaintenanceInformation" TypeDefinition="MaintenanceInformationType" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="Temperature" TypeDefinition="ControlledParameterType" WriteAccess="0"/>
+    </opc:Children>
+  </opc:ObjectType>
+  <opc:ObjectType BaseType="ua:BaseObjectType" IsAbstract="false" IsDeclaration="false" NoClassGeneration="false" PartNo="0" SymbolicName="ControlledParameterType" WriteAccess="0">
+    <opc:Children>
+      <opc:Variable AccessLevel="ReadWrite" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="SetValue" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="ActualValue" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable AccessLevel="ReadWrite" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="LowerTolerance" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable AccessLevel="ReadWrite" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="UpperTolerance" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable AccessLevel="ReadWrite" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="MinValue" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable AccessLevel="ReadWrite" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="MaxValue" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable AccessLevel="ReadWrite" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="SetRampDown" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable AccessLevel="ReadWrite" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="SetRampUp" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+    </opc:Children>
+  </opc:ObjectType>
+  <opc:ObjectType BaseType="ua:BaseObjectType" IsAbstract="false" IsDeclaration="false" NoClassGeneration="false" PartNo="0" SymbolicName="MaintenanceType" WriteAccess="0">
+    <opc:Children>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="RemainingInterval" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Variable IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="Interval" TypeDefinition="ua:AnalogItemType" WriteAccess="0"/>
+      <opc:Property DataType="ua:String" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="AdditionalInformation" WriteAccess="0"/>
+      <opc:Property DataType="ua:String" IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="Status" WriteAccess="0"/>
+      <opc:Method IsDeclaration="false" MaxCardinality="0" MinCardinality="0" NonExecutable="false" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="Reset" WriteAccess="0">
+        <opc:InputArguments/>
+        <opc:OutputArguments/>
+      </opc:Method>
+    </opc:Children>
+  </opc:ObjectType>
+  <opc:ObjectType BaseType="ua:BaseObjectType" IsAbstract="false" IsDeclaration="false" NoClassGeneration="false" PartNo="0" SymbolicName="MaintenanceInformationType" WriteAccess="0">
+    <opc:Children>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="Heating" TypeDefinition="MaintenanceType" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="Cooling" TypeDefinition="MaintenanceType" WriteAccess="0"/>
+    </opc:Children>
+  </opc:ObjectType>
+  <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="DeviceSet" TypeDefinition="ua:BaseObjectType" WriteAccess="0">
+    <opc:Children>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="TCD_TPS_30293_02" TypeDefinition="TCD_Interface" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="TCD_TPS_11090_24" TypeDefinition="TCD_Interface" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="TCD_TPS_26179_06" TypeDefinition="TCD_Interface" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="TCD_TPS_22507_03" TypeDefinition="TCD_Interface" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="TCD_TPS_13502_21" TypeDefinition="TCD_Interface" WriteAccess="0"/>
+      <opc:Object IsDeclaration="false" MaxCardinality="0" MinCardinality="0" PartNo="0" PreserveDefaultAttributes="false" SymbolicName="TCD_CSZ_103521" TypeDefinition="TCD_Interface" WriteAccess="0"/>
+    </opc:Children>
+    <opc:References>
+      <opc:Reference IsInverse="true" IsOneWay="false">
+        <opc:ReferenceType>ua:Organizes</opc:ReferenceType>
+        <opc:TargetId>ua:ObjectsFolder</opc:TargetId>
+      </opc:Reference>
+    </opc:References>
+  </opc:Object>
+</opc:ModelDesign>

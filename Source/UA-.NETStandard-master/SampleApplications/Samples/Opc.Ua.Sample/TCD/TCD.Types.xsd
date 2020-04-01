@@ -1,0 +1,41 @@
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ua="http://opcfoundation.org/UA/2008/02/Types.xsd"
+  xmlns:tns="http://opcfoundation.org/UA/TCD/"
+  targetNamespace="http://opcfoundation.org/UA/TCD/"
+  elementFormDefault="qualified"
+>
+  <xs:import namespace="http://opcfoundation.org/UA/2008/02/Types.xsd" />
+
+  <xs:complexType name="TimeZoneDataType">
+    <xs:sequence>
+      <xs:element name="offset" type="xs:unsignedShort" minOccurs="0" />
+      <xs:element name="daylightSavingInOffset" type="xs:boolean" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeZoneDataType" type="tns:TimeZoneDataType" />
+
+  <xs:complexType name="ListOfTimeZoneDataType">
+    <xs:sequence>
+      <xs:element name="TimeZoneDataType" type="tns:TimeZoneDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOfTimeZoneDataType" type="tns:ListOfTimeZoneDataType" nillable="true"></xs:element>
+
+  <xs:complexType name="ActiveErrorDataType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string" minOccurs="0" nillable="true" />
+      <xs:element name="Severity" type="xs:unsignedShort" minOccurs="0" />
+      <xs:element name="Message" type="ua:LocalizedText" minOccurs="0" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActiveErrorDataType" type="tns:ActiveErrorDataType" />
+
+  <xs:complexType name="ListOfActiveErrorDataType">
+    <xs:sequence>
+      <xs:element name="ActiveErrorDataType" type="tns:ActiveErrorDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOfActiveErrorDataType" type="tns:ListOfActiveErrorDataType" nillable="true"></xs:element>
+
+</xs:schema>
