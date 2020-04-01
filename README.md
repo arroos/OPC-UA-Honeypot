@@ -1,6 +1,8 @@
 # opc-ua-hp
 OPC UA Honeypot
 
+COPYRIGHT AND LICENSING
+
 Copyright 2019 Andrew Roos. 
 
 The OPC UA Honeypot is free software: you can redistribute it and/or 
@@ -20,3 +22,14 @@ along with the OPC UA Honeypot..  If not, see
 Some individual files are Copyright The OPC Foundation, Inc and licensed 
 under either the OPC Reciprocal Community License or the OPC Foundation 
 MIT License, as specified by the copyright notices in these files. 
+
+BUILD INSTRUCTIONS
+
+This project is a delta to the OPC Foundation UA-.NETStandard software
+(https://github.com/OPCFoundation/UA-.NETStandard). It was implemented 
+and tested with version 1.04.354. To build, first install the OPC 
+Foundation UA-.NETStandard solution. This will create a directory 
+called "UA-.NETStandard-master". Copy the contents of this project's
+UA-.NETStandard-master folder into this directory, retaining subdirectory
+paths. This will add some files to the OPC Foundation project, and replace 
+others. Then build the NetCoreConsoleServer project.
