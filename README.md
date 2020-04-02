@@ -16,7 +16,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with the OPC UA Honeypot..  If not, see 
+along with the OPC UA Honeypot. If not, see 
 <https://www.gnu.org/licenses/>.
 
 Some individual files are Copyright The OPC Foundation, Inc and licensed 
