@@ -38,7 +38,7 @@ UA-.NETStandard documentation.
 CONFIGURATION
 
 The honeypot run-time configuration is specified in 
-Source/UA-.NETStandard-master/SampleApplications/Samples/NetCoreConsoleServer.
+Source/UA-.NETStandard-master/SampleApplications/Samples/NetCoreConsoleServer/Opc.Ua.SampleServer.Config.xml.
 
 INFORMATION MODEL
 
