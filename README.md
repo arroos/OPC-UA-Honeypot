@@ -49,7 +49,9 @@ OPC Foundation UA Model Compiler. The generated files are found in
 They should not be modified since recompiling the information model will 
 overwrite them. The batch file used to invoke the model compiler is 
 /Source/Models/BuildDesign.bat. A diagram of the information model can
-be found in InformationModel.png in the top-level folder.
+be found in InformationModel.png in the top-level folder. Variables and methods 
+coloured yellow can be updated or executed by an intruder, while those coloured 
+green are updated automatically by the simulation subsystem.
 
 SOURCE CODE
 
