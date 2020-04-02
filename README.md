@@ -1,9 +1,9 @@
 # opc-ua-hp
 OPC UA Honeypot
 
-COPYRIGHT AND LICENSING
-
 Copyright 2019 Andrew Roos. 
+
+LICENSING
 
 The OPC UA Honeypot is free software: you can redistribute it and/or 
 modify it under the terms of the GNU General Public License as published 
@@ -32,4 +32,22 @@ Foundation UA-.NETStandard solution. This will create a directory
 called "UA-.NETStandard-master". Copy the contents of this project's
 UA-.NETStandard-master folder into this directory, retaining subdirectory
 paths. This will add some files to the OPC Foundation project, and replace 
-others. Then build the NetCoreConsoleServer project.
+others. Then build the NetCoreConsoleServer project according to the 
+UA-.NETStandard documentation.
+
+CONFIGURATION
+
+The honeypot run-time configuration is specified in 
+Source/UA-.NETStandard-master/SampleApplications/Samples/NetCoreConsoleServer.
+
+INFORMATION MODEL
+
+The information model source XML is found in Source/Models/tcd.xml. This file 
+is not required to build the honeypot, as it has been precompiled using the
+OPC Foundation UA Model Compiler. The generated files are found in
+/Source/UA-.NETStandard-master/SampleApplications/Samples/Opc.Ua.Sample/TCD.
+They should not be modified since recompiling the information model will 
+overwrite them. The batch file used to invoke the model compiler is 
+/Source/Models/BuildDesign.bat. A diagram of the information model can
+be found in InofrmationModel.png in the top-level folder.
+
