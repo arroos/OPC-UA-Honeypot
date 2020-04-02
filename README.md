@@ -51,3 +51,14 @@ overwrite them. The batch file used to invoke the model compiler is
 /Source/Models/BuildDesign.bat. A diagram of the information model can
 be found in InofrmationModel.png in the top-level folder.
 
+SOURCE CODE
+
+The main honeypot functions of user authentication, logging and simulation, are 
+implemented in the new source files found in  
+/Source/UA-.NETStandard-master/SampleApplications/Samples/Opc.Ua.Sample/Honeypot.
+Other than the generated files in TCD, the remainder of the files are modifications
+to the OPC Foundation UA-.NETStandard SampleServer to integrate the honeypot
+functionality. One necessary change was to modify stack to include the client
+IP address and port in the SecureChannelContext, so that these can be recorded
+in the honeypot log files. 
+
