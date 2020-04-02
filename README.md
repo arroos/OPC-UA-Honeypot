@@ -23,22 +23,20 @@ Some individual files are Copyright The OPC Foundation, Inc and licensed
 under either the OPC Reciprocal Community License or the OPC Foundation 
 MIT License, as specified by the copyright notices in these files. 
 
-BUILD INSTRUCTIONS
+OVERVIEW
 
-This project is a delta to the OPC Foundation UA-.NETStandard software
-(https://github.com/OPCFoundation/UA-.NETStandard). It was implemented 
-and tested with version 1.04.354. To build, first install the OPC 
-Foundation UA-.NETStandard solution. This will create a directory 
-called "UA-.NETStandard-master". Copy the contents of this project's
-UA-.NETStandard-master folder into this directory, retaining subdirectory
-paths. This will add some files to the OPC Foundation project, and replace 
-others. Then build the NetCoreConsoleServer project according to the 
-UA-.NETStandard documentation.
+This is a server-side medium-interaction honeypot for the OPC UA industrial
+automation protocol. It includes a user authentication subsystem that is 
+designed to allow persistant attackers access, while mimicing the externally
+observable properties of genuine authentication mechanisms; a logging
+subsystem that records all user authentication attempts, incoming messages, 
+and user interactions with the information model; an information model
+representing a number of Temperature Control Devices; and a simulation 
+subsystem that both simulates the physics of temperature control devices and
+allows pre-programmed operations to make it appear as though they are in use.
 
-CONFIGURATION
-
-The honeypot run-time configuration is specified in 
-Source/UA-.NETStandard-master/SampleApplications/Samples/NetCoreConsoleServer/Opc.Ua.SampleServer.Config.xml.
+The honepot is written in C# and based on the OPC Foundation UA-.NETStandard 
+library. It was been tested on a Windows 10 Professional server. 
 
 INFORMATION MODEL
 
@@ -63,4 +61,21 @@ to the OPC Foundation UA-.NETStandard SampleServer to integrate the honeypot
 functionality. One necessary change was to modify stack to include the client
 IP address and port in the SecureChannelContext, so that these can be recorded
 in the honeypot log files. 
+
+BUILD INSTRUCTIONS
+
+This project is a delta to the OPC Foundation UA-.NETStandard library
+(https://github.com/OPCFoundation/UA-.NETStandard). It was implemented 
+and tested with version 1.04.354. To build, first install the OPC 
+Foundation UA-.NETStandard solution. This will create a directory 
+called "UA-.NETStandard-master". Copy the contents of this project's
+UA-.NETStandard-master folder into this directory, retaining subdirectory
+paths. This will add some files to the OPC Foundation project, and replace 
+others. Then build the NetCoreConsoleServer project according to the 
+UA-.NETStandard documentation.
+
+CONFIGURATION
+
+The honeypot run-time configuration is specified in 
+Source/UA-.NETStandard-master/SampleApplications/Samples/NetCoreConsoleServer/Opc.Ua.SampleServer.Config.xml.
 
